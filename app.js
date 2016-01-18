@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Range from './range.js'
 let WeatherIcon = ({icon}) => {
 	let imageSrc = `http://openweathermap.org/img/w/${icon}.png`
 	return <img className="weather_icon" src={imageSrc}/>
@@ -77,8 +77,8 @@ export default class App extends React.Component {
 				<div>
 				</div>
 				<WeatherDashboard weather={weatherObject[currentDay][currentIndex]}/>
-				<div className="slider">
-					<input  style={{visibility: (weatherObject[currentDay].length > 1) ? "visible": "hidden"}} type="range" min={0} value={currentIndex} onChange={this.slideMoved.bind(this)} max={weatherObject[currentDay].length-1} step="1"/>
+				<div style={{visibility: (weatherObject[currentDay].length > 1) ? "visible": "hidden"}} className="slider">
+					<Range type="range" min={0} value={currentIndex} onChange={this.slideMoved.bind(this)} max={weatherObject[currentDay].length-1} step="1"/>
 				</div>
 				<div className="weather_panel">
 				{days.map((day) => {
