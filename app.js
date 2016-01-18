@@ -78,7 +78,7 @@ export default class App extends React.Component {
 				</div>
 				<WeatherDashboard weather={weatherObject[currentDay][currentIndex]}/>
 				<div style={{visibility: (weatherObject[currentDay].length > 1) ? "visible": "hidden"}} className="slider">
-					<Range type="range" step={1} min={0} value={currentIndex} onChange={this.slideMoved.bind(this)} max={weatherObject[currentDay].length-1} step="1"/>
+					<Range type="range"  min={0} value={currentIndex} onChange={this.slideMoved.bind(this)} max={weatherObject[currentDay].length-1} step="1"/>
 				</div>
 				<div className="weather_panel">
 				{days.map((day) => {
